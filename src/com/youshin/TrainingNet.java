@@ -16,7 +16,7 @@ public class TrainingNet {
 //
 //    };
 
-    private final double[][] RIGHT_RES;// = {0, 0, 0, 0, 1, 1, 1, 1};
+    private final double[][] rightRes;// = {0, 0, 0, 0, 1, 1, 1, 1};
 
     private NeroNet neroNet;
 
@@ -25,7 +25,7 @@ public class TrainingNet {
 
     public TrainingNet(final double[][] inputdata, final double[][] rightRes, final NeroNet neroNet) {
         this.inputdata = inputdata;
-        this.RIGHT_RES = rightRes;
+        this.rightRes = rightRes;
         this.neroNet = neroNet;
         delts.addAll(neroNet.getNerons());
         weights.addAll(neroNet.getWeights());
