@@ -59,7 +59,7 @@ public class TrainingNet {
             xn = inDataNeron.get(id);
             for (int i = 0; i < d.length; i++)
                 for (int j = 0; j < w.length; j++)
-                    System.out.println(++tmp);//w[i][j] += InitParams.L_RATE*d[j]*calcNero.df(n[j])*xn[0];
+                    System.out.println(++tmp+":"+id);//w[i][j] += InitParams.L_RATE*d[j]*calcNero.df(n[j])*xn[0];
         }
     }
  }
