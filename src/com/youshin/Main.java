@@ -24,6 +24,7 @@ public class Main {
         NeroNet neroNet = new NeroNet(inData,  3, 2, 1);
         TrainingNet trainingNet = new TrainingNet(INDATA, RIGHT_RESULT, neroNet);
         trainingNet.calcDelts(INDATA[0],RIGHT_RESULT[0]);
+        trainingNet.calcWeights(INDATA[3]);
 
         //for(double[] n:neroNet.nerons) System.out.println(Arrays.toString(n));
 //        System.out.println("value: "+Arrays.toString(neroNet.getValue()));
