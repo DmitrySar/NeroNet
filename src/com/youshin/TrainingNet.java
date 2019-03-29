@@ -51,6 +51,7 @@ public class TrainingNet {
         ArrayList<double[]> inDataNeron = new ArrayList<>();
         inDataNeron.add(inData);
         inDataNeron.addAll(neroNet.getNerons());
+        int tmp = 0;
         for(int id = 0; id < delts.size(); id++) {
             w = weights.get(id);
             d = delts.get(id);
@@ -58,7 +59,7 @@ public class TrainingNet {
             xn = inDataNeron.get(id);
             for (int i = 0; i < d.length; i++)
                 for (int j = 0; j < w.length; j++)
-                    w[i][j] += InitParams.L_RATE*d[j]*calcNero.df(n[j])*xn[0];
+                    System.out.println(++tmp);//w[i][j] += InitParams.L_RATE*d[j]*calcNero.df(n[j])*xn[0];
         }
     }
  }

@@ -15,11 +15,11 @@ public class NeroNet {
 
     /**
      * Constructor
-     * @param inputData one sample of input data
+     * @param sizeInputData number of values from input data
      * @param neronsOfLayer number of neurons in each layer
      */
-    public NeroNet(@NotNull final double[] inputData, @NotNull final int ... neronsOfLayer) {
-        this.inputData = inputData;
+    public NeroNet(@NotNull final int sizeInputData, @NotNull final int ... neronsOfLayer) {
+        this.inputData = new double[sizeInputData];
         this.neronsOfLayer = neronsOfLayer;
         createLayers();
     }

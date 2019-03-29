@@ -21,7 +21,7 @@ public class Main {
 
     public static void main(String[] args) {
         double[] inData = {1.0, 2.0, 3.0};
-        NeroNet neroNet = new NeroNet(inData,  3, 2, 1);
+        NeroNet neroNet = new NeroNet(3,  3, 2, 1);
         TrainingNet trainingNet = new TrainingNet(INDATA, RIGHT_RESULT, neroNet);
         trainingNet.calcDelts(INDATA[0],RIGHT_RESULT[0]);
         trainingNet.calcWeights(INDATA[3]);
