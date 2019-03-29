@@ -24,7 +24,7 @@ public class CalcNero {
      * @throws ArrayIndexOutOfBoundsException
      * @throws NullPointerException
      */
-    public double[] multiplMatrixVector(final double[][] matrix, final double[] vector) throws ArrayIndexOutOfBoundsException, NullPointerException {
+    public double[] multiplMatrixVector(final double[][] matrix, final double[] vector) {
         if(null == matrix || null == vector) throw new NullPointerException();
         if (matrix[0].length != vector.length) throw new ArrayIndexOutOfBoundsException();
         double res[] = new double[matrix.length];
