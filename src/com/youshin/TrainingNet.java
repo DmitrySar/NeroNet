@@ -1,10 +1,9 @@
 package com.youshin;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class TrainingNet {
-    private final double[][] INPUTDATA;
+    private final double[][] inputdata;
 //    = {
 //            {0,0,0,1},//0
 //            {1,0,0,1},
@@ -24,9 +23,9 @@ public class TrainingNet {
     private ArrayList<double[]> delts = new ArrayList<>();
     private ArrayList<double[][]> weights = new ArrayList<>();
 
-    public TrainingNet(final double[][] INPUTDATA, final double[][] RIGHT_RES, final NeroNet neroNet) {
-        this.INPUTDATA = INPUTDATA;
-        this.RIGHT_RES = RIGHT_RES;
+    public TrainingNet(final double[][] inputdata, final double[][] rightRes, final NeroNet neroNet) {
+        this.inputdata = inputdata;
+        this.RIGHT_RES = rightRes;
         this.neroNet = neroNet;
         delts.addAll(neroNet.getNerons());
         weights.addAll(neroNet.getWeights());
