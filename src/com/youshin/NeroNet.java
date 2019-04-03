@@ -24,6 +24,11 @@ public class NeroNet {
         createLayers();
     }
 
+    /**
+     * set input data in neroNet
+     * @param inputData double[]
+     * @return Neronet
+     */
     public NeroNet setInputData(double[] inputData) {
         this.inputData = inputData;
         return this;
@@ -47,15 +52,27 @@ public class NeroNet {
         for (int i=0; i<nerons.size();i++) nerons.set(i, new CalcNero().getValue(nerons.get(i)));
     }
 
+    /**
+     * Return result out nero net
+     * @return output values from last layers
+     */
     public double[] getValue(){
         calcValues();
         return nerons.get(nerons.size()-1);
     }
 
+    /**
+     * Return all weights from nero net
+     * @return double[][] weights
+     */
     public ArrayList<double[][]> getWeights() {
         return weights;
     }
 
+    /**
+     * Return all nerons from nero net
+     * @return nerons ArrayList<double[]>
+     */
     public ArrayList<double[]> getNerons() {
         return nerons;
     }
