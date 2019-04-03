@@ -20,9 +20,14 @@ public class Main {
 
 
     public static void main(String[] args) {
-        double[] inData = {1.0, 2.0, 3.0};
+        CalcNero calcNero = new CalcNero();
         NeroNet neroNet = new NeroNet(3,  3, 2, 1);
         TrainingNet trainingNet = new TrainingNet(INDATA, RIGHT_RESULT, neroNet);
-        trainingNet.start();
+        neroNet = trainingNet.start();
+        int i = 0;
+        for(double[] indata:INDATA) {
+            neroNet.setInputData(indata);
+            System.out.println(++i + " "+Arrays.toString(neroNet.getValue()));
+        }
     }
 }
