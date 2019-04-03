@@ -77,4 +77,15 @@ public class NeroNet {
         return nerons;
     }
 
+    /**
+     * Set new weights for nero net
+     * @param weights ArrayList<double[][]>
+     * @return NeroNet
+     */
+    public NeroNet setWeights(ArrayList<double[][]> weights) {
+        this.weights = weights;
+        return this;
+    }
+
+
 }
