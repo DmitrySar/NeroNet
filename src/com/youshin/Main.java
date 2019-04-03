@@ -23,12 +23,6 @@ public class Main {
         double[] inData = {1.0, 2.0, 3.0};
         NeroNet neroNet = new NeroNet(3,  3, 2, 1);
         TrainingNet trainingNet = new TrainingNet(INDATA, RIGHT_RESULT, neroNet);
-        trainingNet.calcDelts(INDATA[0],RIGHT_RESULT[0]);
-        trainingNet.calcWeights(INDATA[3]);
-
-        //for(double[] n:neroNet.nerons) System.out.println(Arrays.toString(n));
-//        System.out.println("value: "+Arrays.toString(neroNet.getValue()));
-//        for (double[][] w:neroNet.getWeights()) new CalcNero().showMatrix(w);
-        //for(double[] n:neroNet.nerons) System.out.println(Arrays.toString(n));
+        trainingNet.start();
     }
 }

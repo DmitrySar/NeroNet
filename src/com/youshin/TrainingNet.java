@@ -2,6 +2,8 @@ package com.youshin;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TrainingNet {
     private final double[][] inputdata;
@@ -32,7 +34,7 @@ public class TrainingNet {
         weights.addAll(neroNet.getWeights());
     }
 
-    public void calcDelts (double[] inData, double[] res) {
+    private void calcDelts (double[] inData, double[] res) {
         neroNet.setInputData(inData);
         double delta[] = neroNet.getValue();
         if(res.length != delta.length) throw new ArrayIndexOutOfBoundsException();
@@ -44,7 +46,7 @@ public class TrainingNet {
         for (int i = 1; i < delts.size(); i++ ) delts.set(delts.size()-i-1, calcNero.multipVectorMatrix(delts.get(delts.size()-i), weights.get(weights.size()-i)));
     }
 
-    public void calcWeights(double[] inData) {
+    private void calcWeights(double[] inData) {
         CalcNero calcNero = new CalcNero();
         double[][] w;
         double[] d, n, xn;
@@ -60,6 +62,24 @@ public class TrainingNet {
             for (int i = 0; i < w.length; i++)
                 for(int j = 0; j < xn.length; j++)
                     w[i][j]+=InitParams.L_RATE*d[i]*calcNero.df(n[i])*xn[j];
+        weights.set(count, w);
         }
+    }
+
+    /**
+     * learning nero net
+     * @return nero net with new weights
+     */
+    public NeroNet start() {
+        Map<double[], double[]> inDataRes = new HashMap<>();
+        for (int epoche = 0; epoche < InitParams.EPOCHE; epoche++) {
+            for(int i = 0; i < rightRes.length; i++) inDataRes.put(inputdata[i], rightRes[i]);
+            for (double[] inData:inputdata) {
+                calcDelts(inData, inDataRes.get(inData));
+                calcWeights(inData);
+            }
+            neroNet.setWeights(weights);
+        }
+        return neroNet;
     }
  }
