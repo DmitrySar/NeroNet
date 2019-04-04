@@ -3,6 +3,7 @@ package com.youshin;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class NeroNet {
 
@@ -47,9 +48,14 @@ public class NeroNet {
     }
 
     private void calcValues() {
-        nerons.set(0, new CalcNero().multiplMatrixVector(weights.get(0), inputData));
-        for (int i=1; i<nerons.size();i++) nerons.set(i, new CalcNero().multiplMatrixVector(weights.get(i), nerons.get(i-1)));
-        for (int i=0; i<nerons.size();i++) nerons.set(i, new CalcNero().getValue(nerons.get(i)));
+        final CalcNero calcNero = new CalcNero();
+        nerons.set(0, calcNero.multiplMatrixVector(weights.get(0), inputData));
+        Arrays.setAll(nerons.get(0), count -> calcNero.f(nerons.get(0)[count++]));
+        for (int i=1; i<nerons.size();i++) {
+            nerons.set(i, calcNero.multiplMatrixVector(weights.get(i), nerons.get(i - 1)));
+            final Integer currentLayer = i;
+            Arrays.setAll(nerons.get(i), count -> calcNero.f(nerons.get(currentLayer)[count++]));
+        }
     }
 
     /**

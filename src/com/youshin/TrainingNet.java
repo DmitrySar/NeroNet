@@ -73,13 +73,13 @@ public class TrainingNet {
     public NeroNet start() {
         Map<double[], double[]> inDataRes = new HashMap<>();
         for(int i = 0; i < rightRes.length; i++) inDataRes.put(inputdata[i], rightRes[i]);
-        for (int epoche = 0; epoche < InitParams.EPOCHE; epoche++) {
+ //       for (int epoche = 0; epoche < InitParams.EPOCHE; epoche++) {
             for (double[] inData:inputdata) {
                 calcDelts(inData, inDataRes.get(inData));
                 calcWeights(inData);
             }
             neroNet.setWeights(weights);
-        }
+ //       }
         return neroNet;
     }
  }
