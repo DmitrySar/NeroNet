@@ -8,4 +8,6 @@ public class InitParams {
 
     public final static int EPOCHE = 15000;
 
+    public final static double ACCURACY = 0.1;
+
 }

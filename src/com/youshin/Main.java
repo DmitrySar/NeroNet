@@ -30,7 +30,7 @@ public class Main {
 
     public static void main(String[] args) {
         CalcNero calcNero = new CalcNero();
-        NeroNet neroNet = new NeroNet(3,  3, 2, 1);
+        NeroNet neroNet = new NeroNet(3,  3, 3, 1);
         TrainingNet trainingNet = new TrainingNet(INDATA, RIGHT_RESULT, neroNet);
         neroNet = trainingNet.train();
         int i = 0;
