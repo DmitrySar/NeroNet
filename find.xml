@@ -1,9 +1,9 @@
 <application>
   <component name="FindSettings">
-    <option name="customScope" value="Project 'NeroNet3'" />
-    <option name="defaultScopeName" value="Project 'NeroNet3'" />
+    <option name="customScope" value="Project 'NeroNetGit'" />
+    <option name="defaultScopeName" value="Project 'NeroNetGit'" />
     <option name="localRegularExpressions" value="true" />
     <option name="LOCAL_REGULAR_EXPRESSIONS" value="true" />
-    <option name="SEARCH_SCOPE" value="Project 'NeroNet3'" />
+    <option name="SEARCH_SCOPE" value="Project 'NeroNetGit'" />
   </component>
 </application>
