@@ -1,9 +1,9 @@
 <application>
   <component name="FindSettings">
-    <option name="customScope" value="Module 'shablonGenerator'" />
-    <option name="defaultScopeName" value="Module 'shablonGenerator'" />
+    <option name="customScope" value="Project 'learning'" />
+    <option name="defaultScopeName" value="Project 'learning'" />
     <option name="localRegularExpressions" value="true" />
     <option name="LOCAL_REGULAR_EXPRESSIONS" value="true" />
-    <option name="SEARCH_SCOPE" value="Module 'shablonGenerator'" />
+    <option name="SEARCH_SCOPE" value="Project 'learning'" />
   </component>
 </application>
